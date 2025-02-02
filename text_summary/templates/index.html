@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summarization</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="text">Paste your text here:</label>
+                <textarea id="text" name="text" rows="10" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file">Or upload a text file:</label>
+                <input type="file" id="file" name="file">
+            </div>
+            <button type="submit">Summarize</button>
+        </form>
+
+        {% if summary %}
+        <div class="summary">
+            <h2>Summary:</h2>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Beautiful Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Created by <strong>Tassawar Abbas</strong></p>
+            <p>Visit my website: <a href="https://dataforai.info" target="_blank">dataforai.info</a></p>
+        </div>
+    </footer>
+</body>
+</html>
